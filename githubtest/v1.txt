@@ -3,3 +3,4 @@ conflict master
 conflict dev
 add v3 in dev
 git checkout -b dev fix and push to github
+local changes
