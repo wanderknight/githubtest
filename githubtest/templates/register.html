@@ -1,0 +1,50 @@
+﻿{# ref: my-acount.html#}
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}register{% endblock title %}
+{% block slider %}{% endblock slider%}
+{% block body %}
+    <!-- Start My Account Area -->
+    <section class="my_account_area pt--80 pb--55 bg--white">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-12">
+                </div>
+                <div class="col-lg-4 col-12">
+                    <div class="my__account__wrapper">
+                        <h3 class="account__title">Register</h3>
+{# todo form  validate #}
+                        <form method="post" action="/user/register">
+                            <div class="account__form">
+                                <div class="input__box">
+                                    <label>username<span>*</span></label>
+                                    <input type="text" name="user_name" placeholder="用户名" required="required"
+                                           pattern="^[\u2E80-\u9FFF\w-]{4,20}$" autofocus="autofocus">
+                                </div>
+                                <div class="input__box">
+                                    <label>Password<span>*</span></label>
+                                    <input type="password" name="password" placeholder="密码" required="required">
+                                </div>
+                                <div class="input__box">
+                                    <label>confirm Password<span>*</span></label>
+                                    <input type="password" placeholder="确认密码" required="required">
+                                </div>
+                                <div class="input__box">
+                                    <label>Email address <span>*</span></label>
+                                    <input type="email" name="email" placeholder="邮箱" required="required">
+                                </div>
+                                <label>注册即代表同意《todo协议》《隐私保护指引》</label>
+                                <span class="error_tip2"></span>
+                                <div class="form__btn">
+                                    <button>Register</button>
+                                </div>
+                            </div>
+                        </form>
+                        {{ errmsg }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End My Account Area -->
+{% endblock %}

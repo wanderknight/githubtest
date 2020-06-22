@@ -1,0 +1,43 @@
+﻿{% extends 'base.html' %}
+{% load static %}
+{% block title %}login{% endblock title %}
+{% block slider %}{% endblock %}
+{% block body %}
+    <!-- Start My Account Area -->
+    <section class="my_account_area pt--80 pb--55 bg--white">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-12">
+                </div>
+                <div class="col-lg-6 col-12">
+                    <div class="my__account__wrapper">
+                        <h3 class="account__title">Login</h3>
+                        <form method="post">
+                            <div class="account__form">
+                                <div class="input__box">
+                                    <label>Username or email address <span>*</span></label>
+                                    <input type="text" name="username" value="{{ username }}" placeholder="请输入用户名">
+                                </div>
+                                <div class="input__box">
+                                    <label>Password<span>*</span></label>
+                                    <input type="password" name="password" placeholder="请输入密码">
+                                </div>
+                                <div class="form__btn">
+                                    <button>Login</button>
+                                    <label class="label-for-checkbox">
+                                        <input id="rememberme" class="input-checkbox" name="rememberme"
+                                               type="checkbox" {{ checked }}>
+                                        <span>Remember me</span>
+                                    </label>
+                                </div>
+                                <a class="forget_pass" href="#">Lost your password?</a>
+                            </div>
+                        </form>
+                        {{ errmsg }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End My Account Area -->
+{% endblock body %}
